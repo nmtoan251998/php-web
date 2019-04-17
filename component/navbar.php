@@ -27,9 +27,13 @@
                 <a class="nav-link" href="/page/newBlog.php">New blog</a>
             </li>
         </ul>
-
-        <button type="button" class="btn btn-dark position-absolute new__blog-badge" style="top: 15%; right: 1%;">
-            New blog today <span class="badge badge-light badge-pill">4</span>
-        </button>
     </div>
+    
+    <ul class="navbar-nav justify-content-end">
+        <li class="nav-item active">
+            <button type="button" class="btn btn-dark position-absolute new__blog-badge" style="top: 15%; right: 1%;">
+                New blog today <span class="badge badge-light badge-pill">4</span>
+            </button>
+        </li>
+    </ul>
 </nav>

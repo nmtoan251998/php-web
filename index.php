@@ -15,6 +15,7 @@
 <body>
     <div class="container-fluid">
         <?php include "component/navbar.php"?>
+        
     </div>
    
     <script src="/public/js/jquery-3.4.0.min.js"></script>
