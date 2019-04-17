@@ -1,0 +1,8 @@
+.container-fluid {
+    padding: 0;
+}
+
+.blog__management, .blog__insertion {
+    padding-left: 15px;
+    padding-right: 15px;
+}
