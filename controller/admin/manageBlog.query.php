@@ -19,11 +19,11 @@
 
             while($row = mysqli_fetch_array($result)) {
                 echo'<tr>';
-                    echo"<th scope='row'>".$row['blog_id']."</th>";
-                    echo"<td>".$row['title']."</td>";
-                    echo"<td>".$row['description']."</td>";
-                    echo"<td>".$row['author']."</td>";
-                    echo"<td>".$row['post_date']."</td>";
+                    echo"<th width='5%'scope='row'>".$row['blog_id']."</th>";
+                    echo"<td width='20%'>".$row['title']."</td>";
+                    echo"<td width='45%'>".$row['description']."</td>";
+                    echo"<td width='10%'>".$row['author']."</td>";
+                    echo"<td width='15%'>".$row['post_date']."</td>";
                     echo'<td>';
                         echo'<div class="dropdown">';
                             echo'<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">';
