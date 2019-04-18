@@ -21,9 +21,8 @@
             if(mysqli_query($conn, $sql)){
                 ?>
                 <script>
-                    setTimeout(() => {
-                        window.location.href="/view/admin/index.php"
-                    }, 3000);
+                    alert("Inserted!");
+                    window.location.href="/view/admin/index.php"
                 </script>
             <?php 
             } else{
