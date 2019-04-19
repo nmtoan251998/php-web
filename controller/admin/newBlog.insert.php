@@ -23,6 +23,8 @@
             $sql = "INSERT INTO post VALUES($blog_id, '$title', '$description', '$author', '$post_date')";
             
             if(mysqli_query($conn, $sql)){
+                require "../../view/admin/component/navbar.php";
+                require "../../view/admin/page/newBlog.php";
                 ?>
                 <script>
                     alert("Inserted!");

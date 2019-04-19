@@ -7,26 +7,33 @@
 </head>
 <body>
     <?php
-        $query = $_SERVER["QUERY_STRING"];
-        $id = (int)substr($query, -1); 
-
         $conn = getDb();
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        
-        $sql = "";
 
-        if(mysqli_query($conn, $sql)){
-            ?>
-            <script>
-                // alert("Deleted!");
-                // window.location.href="/view/admin/page/manageBlog.php"
-            </script>
-        <?php 
-        } else{
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        if(isset($_POST['submit'])) {
+            $updateBlogId = $_POST['blog_id']; 
+            $updateTitle = $_POST['title']; 
+            $updateDescription = $_POST['description'];    
+            $updateAuthor = $_POST['author']; 
+            $updatePostDate = $_POST['post_date']; 
+
+            $updateSql = "UPDATE post SET title='$updateTitle' WHERE blog_id=$updateBlogId";
+
+            if(mysqli_query($conn, $updateSql)){
+                ?>
+                <script>
+                    alert("Updated!");
+                    window.location.href="/view/admin/page/manageBlog.php"
+                </script>
+            <?php 
+            } else{
+                echo "ERROR: Could not able to execute $updateSql " . mysqli_error($conn);
+            }
         }
+
+        
     ?>
 </body>
 </html>

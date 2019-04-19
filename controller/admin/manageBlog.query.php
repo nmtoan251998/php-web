@@ -34,7 +34,7 @@
                                 echo'Actions';
                             echo'</button>';
                             echo'<div class="dropdown-menu">';
-                                echo'<a class="dropdown-item" href="/controller/admin/manageBlog.modify.php?blog_id='.$row['blog_id'].'">Modify</a>';
+                                echo'<a class="dropdown-item" href="./manageBlog.modify.php?blog_id='.$row['blog_id'].'">Modify</a>';
                                 echo'<a class="dropdown-item" href="/controller/admin/manageBlog.delete.php?blog_id='.$row['blog_id'].'">Delete</a>';
                                 echo'<a class="dropdown-item" href="/controller/admin/manageBlog.view.php?blog_id='.$row['blog_id'].'">View</a>';
                             echo'</div>';
