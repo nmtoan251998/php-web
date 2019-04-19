@@ -6,16 +6,9 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/bootstrap4/bootstrap.min.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <?php require "../../view/admin/component/navbar.php"?>      
-        <div class="container-fluid blog__management">                
-            <?php require "./manageBlog.query.php"?>   
-        </div>
-    </div>
-
     <?php
         $query = $_SERVER["QUERY_STRING"];
-        $id = (int)substr($query, -1); 
+        $id = substr($query, strpos($query, "=")+1); 
 
         $conn = getDb();
         if (!$conn) {
@@ -25,6 +18,9 @@
         $sql = "DELETE FROM post WHERE blog_id=$id";
 
         if(mysqli_query($conn, $sql)){
+            require "../../view/admin/component/navbar.php";
+            require "./manageBlog.query.php";
+
             ?>
             <script>
                 alert("Deleted!");
@@ -34,6 +30,8 @@
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
         }
+
+        
     ?>
 </body>
 </html>
