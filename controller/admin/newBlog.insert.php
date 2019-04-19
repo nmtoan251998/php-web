@@ -16,6 +16,10 @@
             $post_date = $_POST['post_date']; 
 
             $conn = getDb();
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
+            
             $sql = "INSERT INTO post VALUES($blog_id, '$title', '$description', '$author', '$post_date')";
             
             if(mysqli_query($conn, $sql)){

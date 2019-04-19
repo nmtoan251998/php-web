@@ -6,13 +6,6 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/bootstrap4/bootstrap.min.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <?php require "../../view/admin/component/navbar.php"?>      
-        <div class="container-fluid blog__management">                
-            <?php require "./manageBlog.query.php"?>   
-        </div>
-    </div>
-
     <?php
         $query = $_SERVER["QUERY_STRING"];
         $id = (int)substr($query, -1); 
@@ -22,13 +15,13 @@
             die("Connection failed: " . mysqli_connect_error());
         }
         
-        $sql = "DELETE FROM post WHERE blog_id=$id";
+        $sql = "";
 
         if(mysqli_query($conn, $sql)){
             ?>
             <script>
-                alert("Deleted!");
-                window.location.href="/view/admin/page/manageBlog.php"
+                // alert("Deleted!");
+                // window.location.href="/view/admin/page/manageBlog.php"
             </script>
         <?php 
         } else{

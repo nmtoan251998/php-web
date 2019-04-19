@@ -1,5 +1,9 @@
 <?php 
     $conn = getDb();
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    
     $sql = "SELECT * FROM post";
 
     if($result = mysqli_query($conn, $sql)) {
